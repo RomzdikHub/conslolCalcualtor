@@ -39,10 +39,10 @@ const divide = (a, b) => {
 };
 /**
  *
- * @param {number} a
- * @param {number} b
- * @param {string} sign
- * @returns
+ * @param {number} a - 1-е число
+ * @param {number} b - 2-е число
+ * @param {string} sign - оператор: "+", "-", "*","/"
+ * @returns {number|string} - отримуємо результат або ж повідомлення про помилку
  */
 const count = (a, b, sign) => {
   if (sign === "+") {
@@ -58,13 +58,18 @@ const count = (a, b, sign) => {
   }
 };
 
-const firstInput = parseFloat(prompt("Введіть перше число:"));
-const sign = prompt("Обреріть операцію: +, -, *, /");
-const secondInput = parseFloat(prompt("Введіть друге число:"));
+const runCalculator = () => {
+  const a = parseFloat(prompt("Введіть перше число: "));
+  const sign = prompt("Обреріть операцію: +, -, *, /");
+  const b = parseFloat(prompt("Введіть друге число: "));
 
-if (isNaN(firstInput) || isNaN(secondInput)) {
-  console.log("Ошибочка, веддіть число");
-} else {
-  const result = count(firstInput, secondInput, sign);
+  if (isNaN(a) || isNaN(b)) {
+    console.log("Ошибочка, веддіть число");
+    return;
+  }
+
+  const result = count(a, b, sign);
   console.log(`Відповідь: ${result}`);
-}
+};
+
+runCalculator();
