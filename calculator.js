@@ -35,7 +35,11 @@ const multiply = (a, b) => {
  * @returns {number}
  */
 const divide = (a, b) => {
-  return a / b;
+    if(b === 0) {
+        return "Число на 0 не ділиться!"
+    } else {
+        return a / b;
+    }
 };
 /**
  *
@@ -58,7 +62,7 @@ const count = (a, b, sign) => {
   }
 };
 
-const runCalculator = () => {
+const launchCalculator = () => {
   const a = parseFloat(prompt("Введіть перше число: "));
   const sign = prompt("Обреріть операцію: +, -, *, /");
   const b = parseFloat(prompt("Введіть друге число: "));
@@ -72,4 +76,4 @@ const runCalculator = () => {
   console.log(`Відповідь: ${result}`);
 };
 
-runCalculator();
+launchCalculator();
