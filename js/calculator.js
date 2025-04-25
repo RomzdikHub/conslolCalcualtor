@@ -94,6 +94,10 @@ const count = (a, b, sign) => {
   }
 };
 
+
+/**
+ * Запускає калькулятор
+ */
 const launchCalculator = () => {
   try {
     const inputA = prompt("Введіть перше число:");
